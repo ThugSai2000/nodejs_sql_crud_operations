@@ -15,6 +15,6 @@ module.exports.deleteEmployeeById = async (id)=>{
 }
 
 module.exports.addOrEditEmployee = async(obj, id=0) => {
-    const [[[{affectedRows}]]] = await db.query('CALL usp_employee_add_or_edit(?,?,?,?)',[id,obj.name,obj.employecode,obj.salary])
+    const [[[{affectedRows}]]] = await db.query('CALL usp_employee_add_or_edit(?,?,?,?)',[id, obj.name, obj.employecode, obj.salary])
     return affectedRows
 }
